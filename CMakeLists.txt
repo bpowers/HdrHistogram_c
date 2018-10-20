@@ -26,7 +26,7 @@ ENABLE_TESTING()
 if(UNIX)
     set(CMAKE_C_FLAGS "-Wall -Wno-unknown-pragmas -Wextra -Wshadow -Winit-self -Wmissing-prototypes -Wpedantic -D_GNU_SOURCE")
     set(CMAKE_C_FLAGS_DEBUG "-O0 -g")
-    set(CMAKE_C_FLAGS_RELEASE "-O3 -g")
+    set(CMAKE_C_FLAGS_RELEASE "-O3 -g -fvisibility=hidden")
 endif()
 
 if(WIN32)
