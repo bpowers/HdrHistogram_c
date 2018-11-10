@@ -102,6 +102,8 @@ size_t hdr_get_memory_size(struct hdr_histogram* h);
  * @return false if the value is larger than the highest_trackable_value and can't be recorded,
  * true otherwise.
  */
+__attribute__((always_inline))
+__attribute__((aligned(64)))
 bool hdr_record_value(struct hdr_histogram* h, int64_t value);
 
 /**
@@ -115,6 +117,8 @@ bool hdr_record_value(struct hdr_histogram* h, int64_t value);
  * @return false if any value is larger than the highest_trackable_value and can't be recorded,
  * true otherwise.
  */
+__attribute__((always_inline))
+__attribute__((aligned(64)))
 bool hdr_record_values(struct hdr_histogram* h, int64_t value, int64_t count);
 
 

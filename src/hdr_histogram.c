@@ -374,11 +374,15 @@ size_t hdr_get_memory_size(struct hdr_histogram *h)
 //  #######  ##        ########  ##     ##    ##    ########  ######
 
 
+__attribute__((always_inline))
+__attribute__((aligned(64)))
 bool hdr_record_value(struct hdr_histogram* h, int64_t value)
 {
     return hdr_record_values(h, value, 1);
 }
 
+__attribute__((always_inline))
+__attribute__((aligned(64)))
 bool hdr_record_values(struct hdr_histogram* h, int64_t value, int64_t count)
 {
     if (value < 0)
